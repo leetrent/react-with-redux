@@ -1,0 +1,7 @@
+## Start React application:
+$ npm start
+
+## Install npm package into local project:
+npm install --save <name of npm package>
+Example:
+$ npm install --save faker

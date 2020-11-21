@@ -1,0 +1,4 @@
+## Create React app:
+$ npx create-react-app <name of app>
+Example:
+$ npx create-react-app seasons
