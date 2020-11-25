@@ -1,12 +1,39 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
+
+    ////////////////////////////////////////////////////////
+    // Legacy way of binding 'this'
+    ////////////////////////////////////////////////////////
+    // constructor() {
+    //     super();
+    //     this.onFormSubmit = this.onFormSubmit.bind(this);
+    // }
+
+    // onFormSubmit(event) {
+    //     event.preventDefault();
+    //     console.log(this.state.term);
+    // }
+    ////////////////////////////////////////////////////////
+
     state = { term: '' };
+
+    ////////////////////////////////////////////////////////
+    // ES2015 way of binding 'this'
+    // Assures that the value of 'this' is always equal to
+    // the value of the enclosing class instance, in this
+    // case, SearchBar.
+    ////////////////////////////////////////////////////////
+    onFormSubmit = (event) => {
+        event.preventDefault();
+        console.log(this.state.term);        
+    }
+    ////////////////////////////////////////////////////////
 
     render() {
         return (
             <div className="ui segment">
-                <form className="ui form">
+                <form onSubmit={this.onFormSubmit} className="ui form">
                     <div className="field">
                         <label>Image Search</label>
                         <input 
