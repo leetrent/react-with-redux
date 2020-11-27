@@ -3,6 +3,7 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 
 class App extends React.Component {
+    state = { images: [] };
     
     ////////////////////////////////////////////////////////////////////////////////////
     // USING PROMISE
@@ -11,7 +12,7 @@ class App extends React.Component {
     //     axios.get('https://api.unsplash.com/search/photos', {
     //         params: {query: term},
     //         headers: {
-    //             Authorization: 'Client-ID ',
+    //             Authorization: '',
     //         }
     //     })
     //     .then(response => {
@@ -23,14 +24,14 @@ class App extends React.Component {
     ////////////////////////////////////////////////////////////////////////////////////
     // USING ASYNC / AWAIT SYNTAX
     ////////////////////////////////////////////////////////////////////////////////////    
-    async onSeachSubmit(term) {
+    onSeachSubmit = async (term) => {
         const response = await axios.get('https://api.unsplash.com/search/photos', {
             params: {query: term},
             headers: {
-                Authorization: 'Client-ID ',
+                Authorization: '',
             }
         });
-        console.log(response.data.results);
+        this.setState({ images: response.data.results });
     }
     ////////////////////////////////////////////////////////////////////////////////////
 
@@ -38,6 +39,7 @@ class App extends React.Component {
         return (
             <div className="ui container" style={ { marginTop: '10px' } } >
                 <SearchBar onSubmit={this.onSeachSubmit} />
+                Found: {this.state.images.length} images
             </div>            
         );
     }
