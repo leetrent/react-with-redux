@@ -8,16 +8,12 @@ class App extends React.Component {
     state = { videos: [], selectedVideo: null };
 
     onTermSubmit = async (term) => {
-        console.log("[App][onTermSubmit] => (term)", term);
-
-        const response = await youtube.get("/search", {
+         const response = await youtube.get("/search", {
             params: {
                 q: term
             }
         });
-
         this.setState({ videos: response.data.items });
-        console.log("[App][onTermSubmit] => (response.data.items)", response.data.items);
     };
 
     onVideoSelect = (video) => {
