@@ -1,10 +1,11 @@
 import React from 'react';
 // import Accordion from './components/Accordion';
-import Search from './components/Search';
+//import Search from './components/Search';
+import Dropdown from './components/Dropdown';
 
 // const items = [
 //   {
-//     title: 'What is React?',
+//     title: 'What is React?',n
 //     content: 'React is front-end Javascript library.'
 //   },
 //   {
@@ -21,7 +22,7 @@ export default () => {
   return (
     <div>
       <div>
-        <Search />
+        <Dropdown />
         </div>
     </div>
   );
