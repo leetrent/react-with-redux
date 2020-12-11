@@ -12,13 +12,26 @@ const options = [
     value: 'ar'
   },
   {
+    label: 'Dutch',
+    value: 'nl'
+  },
+  {
+    label: 'French',
+    value: 'fr'
+  },
+  {
     label: 'Hindi',
     value: 'hi'
   },
   {
-    label: 'Dutch',
-    value: 'nl'
+    label: 'Portuguese',
+    value: 'pt'
+  },
+  {
+    label: 'Spanish',
+    value: 'es'
   }
+
 ];
 
 const Translate = () => {  
