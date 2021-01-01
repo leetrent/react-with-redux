@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { signIn, signOut } from '../actions';
+import { GOOGLE_AUTH_KEY } from './keys';
 
 class GoogleAuth extends React.Component {
   
   componentDidMount() {
    window.gapi.load('client:auth2', () => {
      window.gapi.client.init({
-       clientId: '',
+       clientId: GOOGLE_AUTH_KEY,
        scope: 'email'
      })
      .then(() => {
